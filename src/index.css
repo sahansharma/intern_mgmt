@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* NTC Theme - Dark Blue and White */
+    --background: 0 0% 100%;
+    --foreground: 220 100% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 100% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 100% 15%;
+
+    --primary: 220 100% 15%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 95%;
+    --secondary-foreground: 220 100% 15%;
+
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 20% 45%;
+
+    --accent: 220 100% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 220 100% 20%;
+
+    --radius: 0.75rem;
+
+    /* NTC Specific Colors & Design Elements */
+    --ntc-blue: 220 100% 20%;
+    --ntc-blue-light: 220 100% 25%;
+    --ntc-blue-dark: 220 100% 15%;
+    --ntc-white: 0 0% 100%;
+    --ntc-gray: 220 20% 95%;
+    
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 100% 20%), hsl(220 100% 25%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 20% 98%));
+    --gradient-header: linear-gradient(90deg, hsl(220 100% 20%), hsl(220 100% 15%));
+    
+    /* Professional Shadows */
+    --shadow-professional: 0 4px 20px -4px hsl(220 100% 20% / 0.15);
+    --shadow-card: 0 2px 10px -2px hsl(220 20% 80% / 0.2);
+    --shadow-glow: 0 0 30px hsl(220 100% 25% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* NTC Dark Theme */
+    --background: 220 100% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 100% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 100% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 220 100% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 50% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 50% 15%;
+    --muted-foreground: 220 20% 70%;
+
+    --accent: 220 100% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 50% 20%;
+    --input: 220 50% 20%;
+    --ring: 220 100% 50%;
+
+    /* NTC Dark Specific Colors */
+    --ntc-blue: 220 100% 30%;
+    --ntc-blue-light: 220 100% 35%;
+    --ntc-blue-dark: 220 100% 25%;
+    --ntc-white: 0 0% 100%;
+    --ntc-gray: 220 50% 15%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .professional-card {
+    @apply bg-card shadow-lg border border-border/50 rounded-lg;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .professional-header {
+    background: var(--gradient-header);
+    box-shadow: var(--shadow-professional);
+  }
+  
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
